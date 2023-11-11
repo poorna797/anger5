@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Forged in Flames</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `
+
+        In the small village of Emberbrook, nestled against the backdrop of ancient forests, there lived a blacksmith named Marcus. His forge, a haven of rhythmic clanging and billowing smoke, had always been a place of creation and craftsmanship. However, beneath the surface of molten metal and sparks, Marcus harbored a smoldering anger that had been kindled by a betrayal that cut deeper than any blade he had ever forged.
+
+The source of Marcus's anger was a childhood friend named Elias, who had become envious of Marcus's skill and success. Unbeknownst to Marcus, Elias had spread false rumors that tarnished his reputation in the tight-knit village. The betrayal left Marcus wounded, and the ember of anger glowed quietly within him, fueling the fires of resentment.
+
+As the years passed, Marcus's forge, once a symbol of pride and passion, echoed with the clang of anger-forged weapons. Each strike against the anvil seemed to carry the weight of his unresolved emotions, and the villagers noticed a subtle change in the atmosphere of Emberbrook.
+
+One day, an old wanderer named Seraphina arrived in the village. With keen eyes that seemed to see beyond the surface, she sensed the storm brewing within Marcus. Intrigued by the flames that danced in his forge, she struck up a conversation, and Marcus found himself sharing the story of his betrayal.
+
+Seraphina, a nomad with wisdom etched into the lines on her weathered face, spoke of the corrosive nature of anger and the burden it placed on the one who carried it. She urged Marcus to confront Elias and, in doing so, free himself from the chains of resentment that bound him to the past.
+
+Emboldened by Seraphina's words, Marcus sought out Elias, who had remained in the village all these years. Their confrontation was fierce, words exchanged like fiery arrows. Yet, in the heat of the moment, Marcus found the strength to express the pain that had festered within him.
+
+Elias, confronted with the consequences of his jealousy, admitted to his wrongdoing and sought forgiveness. The villagers, witnessing this emotional confrontation, became unwitting spectators to a cathartic release of pent-up anger and the emergence of a pathway toward healing.
+
+In the days that followed, Marcus returned to his forge with a renewed sense of purpose. The once-tempestuous fires of his anger were now harnessed into forging not weapons of resentment, but tools of reconciliation. The village of Emberbrook, touched by the transformative power of forgiveness, witnessed a renaissance in Marcus's craftsmanship, his creations reflecting the newfound harmony within him.
+
+The ember of anger, once a destructive force threatening to engulf Marcus, had been extinguished through the flames of confrontation and forgiveness. In the small village of Emberbrook, where the fires of the forge mirrored the resilience of the human spirit, Marcus's story became a testament to the strength forged in the crucible of reconciliation.
+
+
+
+`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
